@@ -1,11 +1,10 @@
+import { Weather } from './components/weather/weather'
 import './App.css'
 
 function App() {
-
-
   return (
     <>
-      <h1>hola</h1>
+      <Weather />
     </>
   )
 }
