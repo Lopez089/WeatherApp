@@ -6,10 +6,10 @@ const handleChange = (e, setLocation) => {
     setLocation(value)
 }
 
-export const Search = () => {
+export const Search = ({ onSearch }) => {
     const [location, setLocation] = useState('madrid')
     return (
-        <form onSubmit={(e) => handleSearch(e, location)}>
+        <form onSubmit={(e) => handleSearch(e, location, onSearch)}>
             <input
                 type="text"
                 name="search"
