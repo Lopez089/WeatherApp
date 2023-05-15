@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { handleSearch } from "../../utils/handleSearch"
+import './search.css'
 
 const handleChange = (e, setLocation) => {
     const value = e.target.value
@@ -14,10 +15,16 @@ export const Search = ({ onSearch }) => {
                 type="text"
                 name="search"
                 id="search"
-                placeholder="ej: Madrid"
+                placeholder="Search..."
                 onChange={(e) => { handleChange(e, setLocation) }}
             />
-            <button type="submit">Search</button>
+            <div>
+                <button type="submit">
+                    <span className="material-icons">
+                        search
+                    </span>
+                </button>
+            </div>
         </form>
     )
 }

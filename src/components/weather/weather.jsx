@@ -23,7 +23,7 @@ export const Weather = () => {
     }
 
     return (
-        <>
+        <section id='app'>
             <Search onSearch={handleSetDataWeather} onError={handleSetError} />
             {
                 dataWeather &&
@@ -37,6 +37,6 @@ export const Weather = () => {
                 />
             }
 
-        </>
+        </section>
     )
 }
