@@ -9,6 +9,7 @@ const error = {
 
 export const Weather = () => {
     const [dataWeather, setDataWeather] = useState(null)
+    console.log("🚀 ~ file: weather.jsx:12 ~ Weather ~ dataWeather:", dataWeather)
     const [error, setError] = useState({
         error: false,
         errorMessage: ''
@@ -34,6 +35,7 @@ export const Weather = () => {
                     humidity={dataWeather.humidity}
                     error={error}
                     temp={dataWeather.temp}
+                    icon_code={dataWeather.icon_code}
                 />
             }
 

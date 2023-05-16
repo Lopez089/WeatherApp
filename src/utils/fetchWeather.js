@@ -9,7 +9,8 @@ export const fetchWeather = (urlBase, apiKey, location) => {
                 weather: data.weather[0].main,
                 windSpeed: data.wind.speed,
                 humidity: data.main.humidity,
-                city: data.name
+                city: data.name,
+                icon_code: data.weather[0].icon
             }
         }
         )

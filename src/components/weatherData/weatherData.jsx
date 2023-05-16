@@ -7,7 +7,7 @@ const ErrorMessage = ({ errorMessage }) => {
     )
 }
 
-export const WeatherData = ({ weather, windSpeed, humidity, error, city, temp }) => {
+export const WeatherData = ({ weather, windSpeed, humidity, error, city, temp, icon_code }) => {
     if (error.error) {
         return (<ErrorMessage errorMessage={error.errorMessage} />)
     }
@@ -15,6 +15,7 @@ export const WeatherData = ({ weather, windSpeed, humidity, error, city, temp })
         <section>
             <p className='city'>{city}</p>
             <div className="container-weather">
+                <img src={`http://openweathermap.org/img/wn/${icon_code}.png`} alt="icons" />
                 <p className='temp'>{temp}<span>º</span></p>
                 <p>{weather}</p>
             </div>
@@ -52,6 +53,7 @@ WeatherData.propTypes = {
     humidity: PropTypes.number.isRequired,
     city: PropTypes.string.isRequired,
     temp: PropTypes.number.isRequired,
+    icon_code: PropTypes.string.isRequired,
     error: PropTypes.shape({
         error: PropTypes.bool.isRequired,
         errorMessage: PropTypes.string.isRequired,
