@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import './weatherData.css'
 
 const ErrorMessage = ({ errorMessage }) => {
     return (
@@ -11,13 +12,33 @@ export const WeatherData = ({ weather, windSpeed, humidity, error, city, temp })
         return (<ErrorMessage errorMessage={error.errorMessage} />)
     }
     return (
-        <div>
-            <p>City: {city}</p>
-            <p>Weather: {weather}</p>
-            <p>Wind Speed: {windSpeed}</p>
-            <p>Humedity: {humidity}</p>
-            <p>Temp: {temp}</p>
-        </div>
+        <section>
+            <p className='city'>{city}</p>
+            <div className="container-weather">
+                <p className='temp'>{temp}<span>º</span></p>
+                <p>{weather}</p>
+            </div>
+            <div className="container-data">
+                <div>
+                    <p>Wind</p>
+                    <div>
+                        <span className="material-icons">
+                            air
+                        </span>
+                        <p> {windSpeed} km/h</p>
+                    </div>
+                </div>
+                <div>
+                    <p>Humedity </p>
+                    <div>
+                        <span className="material-icons">
+                            water_drop
+                        </span>
+                        <p>{humidity}%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
 

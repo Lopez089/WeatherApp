@@ -1,0 +1,49 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 90%;
+    width: 100%;
+}
+
+.container-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    gap: 0;
+}
+
+.temp {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.temp>span {
+    position: absolute;
+}
+
+.container-data {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    font-size: .8rem;
+}
+
+.container-data>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+}
+
+.container-data>div>p {
+    font-weight: 500;
+}
+
+.container-data>div>div {
+    display: flex;
+    gap: .5rem;
+}
