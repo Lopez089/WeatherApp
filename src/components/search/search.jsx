@@ -4,17 +4,21 @@ import './search.css'
 
 const handleChange = (e, setLocation) => {
     const value = e.target.value
-    setLocation(value)
+    const event = e.target.id
+    setLocation(oldState => ({ ...oldState, [event]: value }))
 }
 
 export const Search = ({ onSearch }) => {
-    const [location, setLocation] = useState('madrid')
+    const [location, setLocation] = useState({
+        city: 'madrid',
+        unit: 'celsius'
+    })
     return (
         <form onSubmit={(e) => handleSearch(e, location, onSearch)}>
             <input
                 type="text"
                 name="search"
-                id="search"
+                id="city"
                 placeholder="Search..."
                 onChange={(e) => { handleChange(e, setLocation) }}
             />
@@ -25,6 +29,10 @@ export const Search = ({ onSearch }) => {
                     </span>
                 </button>
             </div>
+            <select id='unit' onChange={(e) => handleChange(e, setLocation)}>
+                <option id='celsius' name='celsius' value="celsius">Celsius</option>
+                <option id='fahrenheit' name='fahrenheit' value="fahrenheit">Fahrenheit</option>
+            </select>
         </form>
     )
 }

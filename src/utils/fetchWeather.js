@@ -1,5 +1,9 @@
 export const fetchWeather = (urlBase, apiKey, location) => {
-    const URI = `${urlBase}${location}&appid=${apiKey}&units=metric`
+
+    const unit = location.unit === 'celsius' ? 'metric' : 'imperial'
+    console.log("🚀 ~ file: fetchWeather.js:4 ~ fetchWeather ~ unit:", unit)
+
+    const URI = `${urlBase}${location.city}&appid=${apiKey}&units=${unit}`
 
     return fetch(URI)
         .then(res => res.json())
