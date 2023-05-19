@@ -2,6 +2,9 @@ export const handleLocalStorage = (data) => {
     let searchs = localStorage.getItem('weather')
     if (searchs) {
         searchs = JSON.parse(searchs)
+        if(searchs.length > 5){
+            searchs.shift()
+        }
     } else {
         searchs = []
     }

@@ -6,11 +6,11 @@ ClimaNow es una aplicación de clima en tiempo real que te proporciona informaci
 
 ## Características
 
-- Búsqueda de ubicación para obtener el clima actual
-- Visualización de la temperatura, sensación térmica, humedad, velocidad del viento y descripción general del clima
-- Pronóstico del clima para los próximos días
-- Alternar entre unidades de temperatura Celsius y Fahrenheit
-- Interfaz intuitiva y elegante
+- 🔍 Búsqueda de ubicación para obtener el clima actual
+- 🌡️ Visualización de la temperatura, sensación térmica, humedad, velocidad del viento y descripción general del clima
+- 📅 Pronóstico del clima para los próximos días
+- 🌡️ Alternar entre unidades de temperatura Celsius y Fahrenheit
+- 💻 Interfaz intuitiva y elegante
 
 ## Capturas de pantalla
 

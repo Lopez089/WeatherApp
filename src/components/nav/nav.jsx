@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 
 export const Nav = ({ searchs }) => {
-    console.log("🚀 ~ file: nav.jsx:7 ~ Nav ~ searchs:", searchs)
     const [showNav, setShowNav] = useState(false)
 
     return (
@@ -31,9 +30,9 @@ export const Nav = ({ searchs }) => {
                             <ul>
                                 {searchs.map(search => <li key={searchs.lenght + 1}>{search}</li>)}
                             </ul>
+                            
                         ) :
                             <h5>¡Aún no has realizado ninguna búsqueda! Una vez que realices búsquedas, podrás ver tu historial aquí.</h5>
-
                     }
                 </div>
             </nav >
@@ -44,11 +43,9 @@ export const Nav = ({ searchs }) => {
 Nav.propTypes = {
     searchs: PropTypes.oneOfType([
         PropTypes.oneOf([null]),
-        PropTypes.arrayOf(),
+        PropTypes.arrayOf(PropTypes.string),
     ])
 }
 
 //TODO 
-// corregir el error
-// acer que los resultado aparecan
 // que el usuario le de click a los resutado y lo vuelva a buscar

@@ -20,8 +20,8 @@ export const Weather = () => {
     useEffect(() => {
         const searchs = localStorage.getItem('weather')
         console.log("🚀 ~ file: weather.jsx:22 ~ useEffect ~ searchs:", searchs)
-        setSearchs(searchs)
-    }, []);
+        setSearchs(JSON.parse(searchs))
+    }, [dataWeather]);
 
     const handleSetDataWeather = (data) => {
         setDataWeather(data)
