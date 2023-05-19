@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import './nav.css'
+import PropTypes from 'prop-types'
 
-export const Nav = () => {
+
+export const Nav = ({ searchs }) => {
+    console.log("🚀 ~ file: nav.jsx:7 ~ Nav ~ searchs:", searchs)
     const [showNav, setShowNav] = useState(false)
 
     return (
         <>
             <nav>
-                <div className='nav'>
+                <div className='nav '>
                     <h1>Weather App</h1>
                     <span
                         className="material-icons"
@@ -18,19 +21,34 @@ export const Nav = () => {
                 </div>
                 <div className={
                     showNav ?
-                        'containerSearchHide containerSearch' :
+                        'containerSearchHide containerSearch '  :
                         'containerSearchShow containerSearch '
 
                 }>
                     <h4>Busquedas Anteriores</h4>
-                    <ul>
-                        <li>Barcelona</li>
-                        <li>Barcelona</li>
-                        <li>Barcelona</li>
-                        <li>Barcelona</li>
-                    </ul>
+                    {
+                        searchs ? (
+                            <ul>
+                                {searchs.map(search => <li key={searchs.lenght + 1}>{search}</li>)}
+                            </ul>
+                        ) :
+                            <h5>¡Aún no has realizado ninguna búsqueda! Una vez que realices búsquedas, podrás ver tu historial aquí.</h5>
+
+                    }
                 </div>
             </nav >
         </>
     )
 }
+
+Nav.propTypes = {
+    searchs: PropTypes.oneOfType([
+        PropTypes.oneOf([null]),
+        PropTypes.arrayOf(),
+    ])
+}
+
+//TODO 
+// corregir el error
+// acer que los resultado aparecan
+// que el usuario le de click a los resutado y lo vuelva a buscar

@@ -8,7 +8,6 @@ export const handleSearch = (e, location, onSearch, onError) => {
     fetchWeather(urlBase, apiKey, location)
         .then(data => {
             onSearch(data)
-            console.log({ data });
             handleLocalStorage(data)
         })
         .catch(err => onError(err))

@@ -1,5 +1,5 @@
 import { Search, WeatherData } from '../index'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Nav } from '../index'
 
 const error = {
@@ -11,11 +11,17 @@ const error = {
 
 export const Weather = () => {
     const [dataWeather, setDataWeather] = useState(null)
-    console.log("🚀 ~ file: weather.jsx:12 ~ Weather ~ dataWeather:", dataWeather)
     const [error, setError] = useState({
         error: false,
         errorMessage: ''
     })
+    const [searchs, setSearchs] = useState(null)
+
+    useEffect(() => {
+        const searchs = localStorage.getItem('weather')
+        console.log("🚀 ~ file: weather.jsx:22 ~ useEffect ~ searchs:", searchs)
+        setSearchs(searchs)
+    }, []);
 
     const handleSetDataWeather = (data) => {
         setDataWeather(data)
@@ -27,7 +33,7 @@ export const Weather = () => {
 
     return (
         <section id='app'>
-            <Nav />
+            <Nav searchs={searchs} />
             <Search onSearch={handleSetDataWeather} onError={handleSetError} />
             {
                 dataWeather &&
