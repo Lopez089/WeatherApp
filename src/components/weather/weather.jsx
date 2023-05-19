@@ -1,5 +1,7 @@
 import { Search, WeatherData } from '../index'
 import { useState } from 'react'
+import { Nav } from '../index'
+
 const error = {
     error: false,
     errorMessage: 'Introduce una ciudad correcta'
@@ -25,6 +27,7 @@ export const Weather = () => {
 
     return (
         <section id='app'>
+            <Nav />
             <Search onSearch={handleSetDataWeather} onError={handleSetError} />
             {
                 dataWeather &&

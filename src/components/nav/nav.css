@@ -1,0 +1,40 @@
+nav {
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    z-index: 9999
+}
+
+nav>div {
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav>div>span {
+    cursor: pointer;
+}
+
+.containerSearch {
+    background: #fff;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    gap: 1rem;
+}
+
+.containerSearchShow {
+    display: none;
+}
+
+.containerSearchHide {
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    text-decoration: underline;
+    cursor: pointer;
+}
