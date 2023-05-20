@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './nav.css'
 import PropTypes from 'prop-types'
+import { handleSearch } from "../../utils/handleSearch"
 
-
-export const Nav = ({ searchs }) => {
+export const Nav = ({ searchs , onSearch}) => {
     const [showNav, setShowNav] = useState(false)
 
     return (
@@ -28,7 +28,13 @@ export const Nav = ({ searchs }) => {
                     {
                         searchs ? (
                             <ul>
-                                {searchs.map(search => <li key={searchs.lenght + 1}>{search}</li>)}
+                                {searchs.map(location => 
+                                <li 
+                                onClick={(e) => handleSearch(e, location , onSearch)} 
+                                key={location.id}
+                                >
+                                    {location.city}
+                                </li>)}
                             </ul>
                             
                         ) :
@@ -48,4 +54,5 @@ Nav.propTypes = {
 }
 
 //TODO 
+// el fallo esta en que tien que crear eta objeto {city: 'madrid', unit: 'celsius'}
 // que el usuario le de click a los resutado y lo vuelva a buscar

@@ -19,7 +19,6 @@ export const Weather = () => {
 
     useEffect(() => {
         const searchs = localStorage.getItem('weather')
-        console.log("🚀 ~ file: weather.jsx:22 ~ useEffect ~ searchs:", searchs)
         setSearchs(JSON.parse(searchs))
     }, [dataWeather]);
 
@@ -33,7 +32,7 @@ export const Weather = () => {
 
     return (
         <section id='app'>
-            <Nav searchs={searchs} />
+            <Nav searchs={searchs} onSearch={handleSetDataWeather}/>
             <Search onSearch={handleSetDataWeather} onError={handleSetError} />
             {
                 dataWeather &&
