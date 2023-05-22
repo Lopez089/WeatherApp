@@ -1,11 +1,17 @@
-export const fetchWeather = (urlBase, apiKey, location) => {
+export const fetchWeather = (urlBase, apiKey, location, coord) => {
+console.log("🚀 ~ file: fetchWeather.js:2 ~ fetchWeather ~ location:", location)
 
-    const unit = location.unit === 'celsius' ? 'metric' : 'imperial'
-    console.log("🚀 ~ file: fetchWeather.js:4 ~ fetchWeather ~ unit:", unit)
+    //const unit = location.unit === 'celsius'  undefined ? 'metric' : 'imperial'
+    const city = location === undefined ? undefined : location.city
+    const unit = location===  undefined? null: location.unit === 'celsius'? 'metric' : 'imperial'
+    const lat = coord ? coord.lat : undefined
+    const long = coord ?  coord.long : undefined 
 
-    const URI = `${urlBase}${location.city}&appid=${apiKey}&units=${unit}`
+    const URLCoord= `${urlBase}lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`
+    const URLLocation = `${urlBase}${city}&appid=${apiKey}&units=${unit}`
 
-    return fetch(URI)
+    const URL = location ?  URLLocation :URLCoord 
+    return fetch(URL)
         .then(res => res.json())
         .then(data => {
             return {

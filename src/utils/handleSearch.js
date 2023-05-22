@@ -5,7 +5,7 @@ const apiKey = import.meta.env.VITE_API_KEY
 
 export const handleSearch = (e, location, onSearch, onError) => {
     e.preventDefault()
-    fetchWeather(urlBase, apiKey, location)
+    fetchWeather(urlBase, apiKey, location, undefined)
         .then(data => {
             onSearch(data)
             handleLocalStorage(data)

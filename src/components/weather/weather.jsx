@@ -1,6 +1,7 @@
 import { Search, WeatherData } from '../index'
 import { useState, useEffect } from 'react'
 import { Nav } from '../index'
+import { fetchWeather } from '../../utils'
 
 const error = {
     error: false,
@@ -21,6 +22,37 @@ export const Weather = () => {
         const searchs = localStorage.getItem('weather')
         setSearchs(JSON.parse(searchs))
     }, [dataWeather]);
+
+    // TODO 
+    // CREAR UNA URL CON LA LATUTUD
+    // HACER UNA LLAMADA A LA API 
+    // GUARDAR LOS DATOS EN EL STADO 
+    // LLA DEVERIA DE FUNCIONAR CUANDO INICIA
+
+
+    useEffect(()=>{
+        if('geolocation' in navigator){
+           navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const coord = {
+                    lat : position.coords.latitude,
+                    long : position.coords.longitude
+                }
+                
+                console.log("🚀 ~ file: weather.jsx:41 ~ useEffect ~ coord:", coord)
+                const urlBase = 'https://api.openweathermap.org/data/2.5/weather?'
+                const apiKey = import.meta.env.VITE_API_KEY
+                
+                fetchWeather(urlBase, apiKey, undefined, coord)
+                    .then(data => setDataWeather(data))
+            
+        
+            
+        })
+        }else{
+            console.log('inactivo');
+        }
+    }, [])
 
     const handleSetDataWeather = (data) => {
         setDataWeather(data)
