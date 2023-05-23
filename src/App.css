@@ -42,3 +42,12 @@ html {
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+
+
+
+@media (min-width: 769px) {
+  .container{
+    width: 414px;
+    margin: 0 auto;
+  }
+}

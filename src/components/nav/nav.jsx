@@ -9,7 +9,7 @@ export const Nav = ({ searchs , onSearch}) => {
     return (
         <>
             <nav>
-                <div className='nav '>
+                <div className='nav container'>
                     <h1>Weather App</h1>
                     <span
                         className="material-icons"

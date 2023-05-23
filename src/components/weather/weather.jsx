@@ -65,19 +65,21 @@ export const Weather = () => {
     return (
         <section id='app'>
             <Nav searchs={searchs} onSearch={handleSetDataWeather}/>
-            <Search onSearch={handleSetDataWeather} onError={handleSetError} />
-            {
-                dataWeather &&
-                <WeatherData
-                    city={dataWeather.city}
-                    weather={dataWeather.weather}
-                    windSpeed={dataWeather.windSpeed}
-                    humidity={dataWeather.humidity}
-                    error={error}
-                    temp={dataWeather.temp}
-                    icon_code={dataWeather.icon_code}
-                />
-            }
+            <div className="container ">
+                <Search onSearch={handleSetDataWeather} onError={handleSetError} />
+                {
+                    dataWeather &&
+                    <WeatherData
+                        city={dataWeather.city}
+                        weather={dataWeather.weather}
+                        windSpeed={dataWeather.windSpeed}
+                        humidity={dataWeather.humidity}
+                        error={error}
+                        temp={dataWeather.temp}
+                        icon_code={dataWeather.icon_code}
+                    />
+                }
+            </div>
 
         </section>
     )
