@@ -21,13 +21,12 @@ form>div {
     display: flex;
     align-items: center;
     position: relative;
-    background-color: red;
 }
 
 button[type="submit"] {
     position: absolute;
     right: 4px;
-    background-color: #353845;
+    background-color: #EC6645;
     color: white;
     border: none;
     width: 25px;
@@ -38,10 +37,15 @@ button[type="submit"] {
     -ms-border-radius: .9rem;
     -o-border-radius: .9rem;
     cursor: pointer;
+    transition: background-color, 4s, 1s ;
+    -webkit-transition: background-color, 4s, 1s ;
+    -moz-transition: background-color, 4s, 1s ;
+    -ms-transition: background-color, 4s, 1s ;
+    -o-transition: background-color, 4s, 1s ;
 }
 
 button[type="submit"]:hover {
-    background-color: #181819;
+    background-color: #b52c09  ;
 }
 
 button[type="submit"]>span {

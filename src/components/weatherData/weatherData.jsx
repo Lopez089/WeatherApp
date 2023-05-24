@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import './weatherData.css'
+import { useSpring, animated } from '@react-spring/web'
 
 const ErrorMessage = ({ errorMessage }) => {
     return (
@@ -8,11 +9,15 @@ const ErrorMessage = ({ errorMessage }) => {
 }
 
 export const WeatherData = ({ weather, windSpeed, humidity, error, city, temp, icon_code }) => {
+    const prop = useSpring({ padding:'100px'})
+    
     if (error.error) {
         return (<ErrorMessage errorMessage={error.errorMessage} />)
     }
+
+    
     return (
-        <section>
+        <animated.section styles={prop}>
             <h3 className='city'>{city}</h3>
             <div className="container-weather">
                 <img src={`http://openweathermap.org/img/wn/${icon_code}.png`} alt="icons" />
@@ -39,7 +44,7 @@ export const WeatherData = ({ weather, windSpeed, humidity, error, city, temp, i
                     </div>
                 </div>
             </div>
-        </section>
+        </animated.section>
     )
 }
 

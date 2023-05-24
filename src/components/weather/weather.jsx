@@ -23,13 +23,6 @@ export const Weather = () => {
         setSearchs(JSON.parse(searchs))
     }, [dataWeather]);
 
-    // TODO 
-    // CREAR UNA URL CON LA LATUTUD
-    // HACER UNA LLAMADA A LA API 
-    // GUARDAR LOS DATOS EN EL STADO 
-    // LLA DEVERIA DE FUNCIONAR CUANDO INICIA
-
-
     useEffect(()=>{
         if('geolocation' in navigator){
            navigator.geolocation.getCurrentPosition(
@@ -38,8 +31,6 @@ export const Weather = () => {
                     lat : position.coords.latitude,
                     long : position.coords.longitude
                 }
-                
-                console.log("🚀 ~ file: weather.jsx:41 ~ useEffect ~ coord:", coord)
                 const urlBase = 'https://api.openweathermap.org/data/2.5/weather?'
                 const apiKey = import.meta.env.VITE_API_KEY
                 
