@@ -7,7 +7,8 @@ import { useSpring, animated } from '@react-spring/web'
 
 
 export const Nav = ({ searchs , onSearch}) => {
-    const prop = useSpring({
+    const [showNav, setShowNav] = useState(false)
+    const animatedTitle = useSpring({
         from:{
             color: '#fff '
         },
@@ -20,14 +21,23 @@ export const Nav = ({ searchs , onSearch}) => {
             friction: 20
         }, 
     })
+
+    const animatedNav = useSpring({
+        display: showNav? 'flex' : 'none',
+        opacity: showNav? 1:0,
+        config: { 
+            duration: 500,
+            tension: 200, 
+            friction: 20
+        }, 
+    })
     
-    const [showNav, setShowNav] = useState(false)
 
     return (
         <>
             <nav>
                 <div className='nav container'>
-                    <h1 >Weather<animated.span style={prop}>App</animated.span></h1>
+                    <h1 >Weather<animated.span style={animatedTitle}>App</animated.span></h1>
                     <span
                         className="material-icons"
                         onClick={() => setShowNav(!showNav)}
@@ -36,12 +46,7 @@ export const Nav = ({ searchs , onSearch}) => {
                     </span>
                 </div>
                 
-                    <div className={
-                        showNav ?
-                            'containerSearchHide containerSearch '  :
-                            'containerSearchShow containerSearch '
-
-                    }>
+                    <animated.div className='containerSearch' style={animatedNav}>
                         <h4>Busquedas Anteriores</h4>
                         {
                             searchs ? (
@@ -58,7 +63,7 @@ export const Nav = ({ searchs , onSearch}) => {
                             ) :
                                 <h5>¡Aún no has realizado ninguna búsqueda! Una vez que realices búsquedas, podrás ver tu historial aquí.</h5>
                         }
-                    </div>
+                    </animated.div>
                 
             </nav >
         </>
