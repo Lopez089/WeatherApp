@@ -17,7 +17,7 @@ export const WeatherData = ({ weather, windSpeed, humidity, error, city, temp, i
 
     
     return (
-        <animated.section styles={prop}>
+        <animated.section styles={prop} className='container-dataWeater'>
             <h3 className='city'>{city}</h3>
             <div className="container-weather">
                 <img src={`http://openweathermap.org/img/wn/${icon_code}.png`} alt="icons" />
