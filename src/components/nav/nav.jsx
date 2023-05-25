@@ -46,7 +46,7 @@ export const Nav = ({ searchs , onSearch}) => {
                     </span>
                 </div>
                 
-                    <animated.div className='containerSearch' style={animatedNav}>
+                    <animated.div className='containerSearch container' style={animatedNav}>
                         <h4>Busquedas Anteriores</h4>
                         {
                             searchs ? (
