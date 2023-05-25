@@ -1,7 +1,5 @@
 export const fetchWeather = (urlBase, apiKey, location, coord) => {
-console.log("🚀 ~ file: fetchWeather.js:2 ~ fetchWeather ~ location:", location)
 
-    //const unit = location.unit === 'celsius'  undefined ? 'metric' : 'imperial'
     const city = location === undefined ? undefined : location.city
     const unit = location===  undefined? null: location.unit === 'celsius'? 'metric' : 'imperial'
     const lat = coord ? coord.lat : undefined
