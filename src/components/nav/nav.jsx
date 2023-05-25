@@ -71,8 +71,9 @@ export const Nav = ({ searchs , onSearch}) => {
 }
 
 Nav.propTypes = {
-    searchs: PropTypes.oneOfType([
-        PropTypes.oneOf([null]),
-        PropTypes.arrayOf(PropTypes.string),
-    ])
+    searchs: PropTypes.arrayOf(PropTypes.shape({
+        city: PropTypes.string,
+        unit:PropTypes.string,
+        id: PropTypes.string,
+    })),
 }

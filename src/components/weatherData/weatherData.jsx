@@ -53,7 +53,7 @@ ErrorMessage.propTypes = {
 };
 
 WeatherData.propTypes = {
-    weather: PropTypes.number.isRequired,
+    weather: PropTypes.string.isRequired,
     windSpeed: PropTypes.number.isRequired,
     humidity: PropTypes.number.isRequired,
     city: PropTypes.string.isRequired,
