@@ -53,4 +53,4 @@ WeatherApp es una aplicación de clima en tiempo real que te proporciona informa
 
 ## Licencia
 
-Este proyecto está licenciado bajo la [Licencia MIT](https://raw.githubusercontent.com/Lopez089/WeatherApp/main/MIT_LICENSE.txt.)
+Este proyecto está licenciado bajo la [Licencia MIT](https://raw.githubusercontent.com/Lopez089/WeatherApp/main/MIT_LICENSE.txt)
