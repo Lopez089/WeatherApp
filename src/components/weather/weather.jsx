@@ -23,24 +23,24 @@ export const Weather = () => {
         setSearchs(JSON.parse(searchs))
     }, [dataWeather]);
 
-    useEffect(()=>{
-        if('geolocation' in navigator){
-           navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const coord = {
-                    lat : position.coords.latitude,
-                    long : position.coords.longitude
-                }
-                const urlBase = 'https://api.openweathermap.org/data/2.5/weather?'
-                const apiKey = import.meta.env.VITE_API_KEY
-                
-                fetchWeather(urlBase, apiKey, undefined, coord)
-                    .then(data => setDataWeather(data))
-            
-        
-            
-        })
-        }else{
+    useEffect(() => {
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const coord = {
+                        lat: position.coords.latitude,
+                        long: position.coords.longitude
+                    }
+                    const urlBase = 'https://api.openweathermap.org/data/2.5/weather?'
+                    const apiKey = import.meta.env.VITE_API_KEY
+
+                    fetchWeather(urlBase, apiKey, undefined, coord)
+                        .then(data => setDataWeather(data))
+
+
+
+                })
+        } else {
             console.log('inactivo');
         }
     }, [])
@@ -55,7 +55,7 @@ export const Weather = () => {
 
     return (
         <section id='app'>
-            <Nav searchs={searchs} onSearch={handleSetDataWeather}/>
+            <Nav searchs={searchs} onSearch={handleSetDataWeather} />
             <div className="container ">
                 <Search onSearch={handleSetDataWeather} onError={handleSetError} />
                 {

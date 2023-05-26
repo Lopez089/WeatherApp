@@ -6,32 +6,32 @@ import { useSpring, animated } from '@react-spring/web'
 
 
 
-export const Nav = ({ searchs , onSearch}) => {
+export const Nav = ({ searchs, onSearch }) => {
     const [showNav, setShowNav] = useState(false)
     const animatedTitle = useSpring({
-        from:{
+        from: {
             color: '#fff '
         },
-        to:{
+        to: {
             color: '#EC6645'
         },
-        config: { 
+        config: {
             duration: 3000,
-            tension: 200, 
+            tension: 200,
             friction: 20
-        }, 
+        },
     })
 
     const animatedNav = useSpring({
-        display: showNav? 'flex' : 'none',
-        opacity: showNav? 1:0,
-        config: { 
+        display: showNav ? 'flex' : 'none',
+        opacity: showNav ? 1 : 0,
+        config: {
             duration: 500,
-            tension: 200, 
+            tension: 200,
             friction: 20
-        }, 
+        },
     })
-    
+
 
     return (
         <>
@@ -45,29 +45,29 @@ export const Nav = ({ searchs , onSearch}) => {
                         {showNav ? 'close' : 'menu'}
                     </span>
                 </div>
-                
-                    <animated.div className='containerSearch container' style={animatedNav}>
-                        <h4>Busquedas Anteriores</h4>
-                        {
-                            searchs ? (
-                                <ul>
-                                    {searchs.map(location => 
-                                    <li 
-                                    onClick={(e) =>{ 
-                                        handleSearch(e, location , onSearch)
-                                        setShowNav(!showNav)
-                                    }} 
-                                    key={location.id}
+
+                <animated.div className='containerSearch container' style={animatedNav}>
+                    <h4>Busquedas Anteriores</h4>
+                    {
+                        searchs ? (
+                            <ul>
+                                {searchs.map(location =>
+                                    <li
+                                        onClick={(e) => {
+                                            handleSearch(e, location, onSearch)
+                                            setShowNav(!showNav)
+                                        }}
+                                        key={location.id}
                                     >
                                         {location.city}
                                     </li>)}
-                                </ul>
-                                
-                            ) :
-                                <h5>¡Aún no has realizado ninguna búsqueda! Una vez que realices búsquedas, podrás ver tu historial aquí.</h5>
-                        }
-                    </animated.div>
-                
+                            </ul>
+
+                        ) :
+                            <h5>¡Aún no has realizado ninguna búsqueda! Una vez que realices búsquedas, podrás ver tu historial aquí.</h5>
+                    }
+                </animated.div>
+
             </nav >
         </>
     )
@@ -76,7 +76,7 @@ export const Nav = ({ searchs , onSearch}) => {
 Nav.propTypes = {
     searchs: PropTypes.arrayOf(PropTypes.shape({
         city: PropTypes.string,
-        unit:PropTypes.string,
+        unit: PropTypes.string,
         id: PropTypes.string,
     })),
 }
