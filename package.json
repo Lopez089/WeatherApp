@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview", 
-    "eslint":"npx eslint"
+    "preview": "vite preview",
+    "eslint": "npx eslint",
+    "eslint:fix": "npx eslint --fix"
   },
   "dependencies": {
     "@react-spring/web": "^9.7.2",
