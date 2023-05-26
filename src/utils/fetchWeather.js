@@ -13,7 +13,7 @@ export const fetchWeather = (urlBase, apiKey, location, coord) => {
         .then(res => res.json())
         .then(data => {
             return {
-                temp: data.main.temp,
+                temp: Math.floor(data.main.temp),
                 weather: data.weather[0].main,
                 windSpeed: data.wind.speed,
                 humidity: data.main.humidity,
