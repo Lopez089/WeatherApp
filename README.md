@@ -1,6 +1,7 @@
 # WeatherApp
 
-![ClimaNow Logo](./logo.png)
+ ![ClimaNow Logo](./asset/Frame%202.svg) 
+ 
 
 WeatherApp es una aplicación de clima en tiempo real que te proporciona información detallada sobre las condiciones climáticas en cualquier ubicación del mundo.
 
