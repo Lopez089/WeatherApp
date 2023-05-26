@@ -53,7 +53,10 @@ export const Nav = ({ searchs , onSearch}) => {
                                 <ul>
                                     {searchs.map(location => 
                                     <li 
-                                    onClick={(e) => handleSearch(e, location , onSearch)} 
+                                    onClick={(e) =>{ 
+                                        handleSearch(e, location , onSearch)
+                                        setShowNav(!showNav)
+                                    }} 
                                     key={location.id}
                                     >
                                         {location.city}
