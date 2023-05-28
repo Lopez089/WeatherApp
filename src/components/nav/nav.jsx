@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import './nav.css'
+import { Logo } from '../index'
 import PropTypes from 'prop-types'
 import { handleSearch } from "../../utils/handleSearch"
 import { useSpring, animated } from '@react-spring/web'
+
+
+
 
 
 
@@ -37,7 +41,7 @@ export const Nav = ({ searchs, onSearch }) => {
         <>
             <nav>
                 <div className='nav container'>
-                    <h1 >Weather<animated.span style={animatedTitle}>App</animated.span></h1>
+                    <Logo />
                     <span
                         className="material-icons"
                         onClick={() => setShowNav(!showNav)}
