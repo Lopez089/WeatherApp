@@ -8,13 +8,13 @@ const handleChange = (e, setLocation) => {
     setLocation(oldState => ({ ...oldState, [event]: value }))
 }
 
-export const Search = ({ onSearch }) => {
+export const Search = ({ onSearch, onError, onDataWeather }) => {
     const [location, setLocation] = useState({
         city: 'madrid',
         unit: 'celsius'
     })
     return (
-        <form onSubmit={(e) => handleSearch(e, location, onSearch)}>
+        <form onSubmit={(e) => handleSearch(e, location, onSearch, onError)}>
             <input
                 type="text"
                 name="search"

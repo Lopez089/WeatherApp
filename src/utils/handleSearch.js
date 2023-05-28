@@ -7,9 +7,17 @@ export const handleSearch = (e, location, onSearch, onError) => {
     e.preventDefault()
     fetchWeather(urlBase, apiKey, location, undefined)
         .then(data => {
+            console.log("🚀 ~ file: handleSearch.js:19 ~ handleSearch ~ data:", data)
+            if (data.error) {
+
+                return (
+                    onError(data),
+                    onSearch(null)
+                )
+            }
             onSearch(data)
             handleLocalStorage(data)
         })
-        .catch(err => onError(err))
+        .catch(err => console.log(err))
 }
 
