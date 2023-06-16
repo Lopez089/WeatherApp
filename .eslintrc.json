@@ -12,7 +12,8 @@
         "plugin:import/errors",
         "plugin:import/warnings",
         "plugin:import/typescript",
-        "standard"
+        "standard",
+        "plugin:storybook/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -29,8 +30,8 @@
     },
     "parser": "@babel/eslint-parser",
     "settings": {
-    "react": {
-      "version": "detect"
-    }
+        "react": {
+            "version": "detect"
+        }
     }
 }
