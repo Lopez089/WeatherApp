@@ -15,13 +15,7 @@ nav>div>span {
     cursor: pointer;
 }
 
-.containerSearch {
-    display: none;
-    background: #fff;
-    flex-direction: column;
-    padding: 2rem 2rem;
-    gap: 1rem;
-}
+
 
 ul {
     list-style: none;

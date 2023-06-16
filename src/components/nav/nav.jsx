@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './nav.css'
-import { Logo } from '../index'
+import { Logo, Menu } from '../index'
 import PropTypes from 'prop-types'
 import { handleSearch } from "../../utils/handleSearch"
 import { useSpring, animated } from '@react-spring/web'
@@ -12,30 +12,6 @@ import { useSpring, animated } from '@react-spring/web'
 
 export const Nav = ({ searchs, onSearch }) => {
     const [showNav, setShowNav] = useState(false)
-    const animatedTitle = useSpring({
-        from: {
-            color: '#fff '
-        },
-        to: {
-            color: '#EC6645'
-        },
-        config: {
-            duration: 3000,
-            tension: 200,
-            friction: 20
-        },
-    })
-
-    const animatedNav = useSpring({
-        display: showNav ? 'flex' : 'none',
-        opacity: showNav ? 1 : 0,
-        config: {
-            duration: 500,
-            tension: 200,
-            friction: 20
-        },
-    })
-
 
     return (
         <>
@@ -50,27 +26,9 @@ export const Nav = ({ searchs, onSearch }) => {
                     </span>
                 </div>
 
-                <animated.div className='containerSearch container' style={animatedNav}>
-                    <h4>Busquedas Anteriores</h4>
-                    {
-                        searchs ? (
-                            <ul>
-                                {searchs.map(location =>
-                                    <li
-                                        onClick={(e) => {
-                                            handleSearch(e, location, onSearch)
-                                            setShowNav(!showNav)
-                                        }}
-                                        key={location.id}
-                                    >
-                                        {location.city}
-                                    </li>)}
-                            </ul>
-
-                        ) :
-                            <h5>¡Aún no has realizado ninguna búsqueda! Una vez que realices búsquedas, podrás ver tu historial aquí.</h5>
-                    }
-                </animated.div>
+                <Menu showNav={showNav}>
+                    pedro
+                </Menu>
 
             </nav >
         </>
