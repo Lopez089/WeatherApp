@@ -17,22 +17,3 @@ export const Menu = ({ children, showNav }) => {
     </animated.div>
   )
 }
-
-// otro component 
-//  <h4>Busquedas Anteriores</h4>
-// searchs ? (
-//   <ul>
-//     {searchs.map(location =>
-//       <li
-//         onClick={(e) => {
-//           handleSearch(e, location, onSearch)
-//           setShowNav(!showNav)
-//         }}
-//         key={location.id}
-//       >
-//         {location.city}
-//       </li>)}
-//   </ul>
-
-// ) :
-//   <h5>¡Aún no has realizado ninguna búsqueda! Una vez que realices búsquedas, podrás ver tu historial aquí.</h5>

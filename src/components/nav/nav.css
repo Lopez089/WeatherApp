@@ -10,7 +10,3 @@ nav>div {
     display: flex;
     justify-content: space-between;
 }
-
-nav>div>span {
-    cursor: pointer;
-}
