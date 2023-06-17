@@ -27,7 +27,6 @@ export const Nav = ({ searchs, onSearch }) => {
                 </div>
 
                 <Menu showNav={showNav}>
-                    pedro
                 </Menu>
 
             </nav >

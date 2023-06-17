@@ -1,3 +1,4 @@
+export * from './itemMenu/itemMenu';
 export * from './logo/logo';
 export * from './menu/menu';
 export * from './nav/nav';

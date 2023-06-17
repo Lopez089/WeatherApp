@@ -14,14 +14,3 @@ nav>div {
 nav>div>span {
     cursor: pointer;
 }
-
-
-
-ul {
-    list-style: none;
-}
-
-li {
-    text-decoration: underline;
-    cursor: pointer;
-}
