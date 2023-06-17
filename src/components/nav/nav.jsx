@@ -11,19 +11,14 @@ import { useSpring, animated } from '@react-spring/web'
 
 
 export const Nav = ({ searchs, onSearch }) => {
-    const [showNav, setShowNav] = useState(false)
+
 
     return (
         <>
             <nav>
                 <div className='nav container'>
                     <Logo />
-                    <span
-                        className="material-icons"
-                        onClick={() => setShowNav(!showNav)}
-                    >
-                        {showNav ? 'close' : 'menu'}
-                    </span>
+
                 </div>
 
                 <Menu showNav={showNav}>
